@@ -52,7 +52,7 @@ class PsPtPc {
 public:
 	double x, y, z,c,r;
 
-	int PoS(int) { system("CLS"); std::cout << "You have choosen Perimeter of sqare ...." <<std::endl;	std::cout << "Enter x :=: ";std::cin >> x;	z = x*4;	return z; }
+	int PoS(int) { system("CLS"); std::cout << "You have choosen Perimeter of sqare ...." <<std::endl;	std::cout << "Enter a :=: ";std::cin >> x;	z = x*4;	return z; }
 
 	int PoR(int, int) { system("CLS"); std::cout << "You have choosen Perimeter of rectangle  ...." <<std::endl;		std::cout << "Enter x :=: ";std::cin >> x;	std::cout << "Enter y :=: ";std::cin >> y;	z = x*2 + y*2;	return z; }
 
@@ -67,17 +67,17 @@ class VcVpVs {
 public:
 	double x, y, z,h;
 
-	int VoC(int) { system("CLS"); std::cout << "You have choosen Volume of cube ...." <<std::endl;	std::cout << "Enter x :=: ";std::cin >> x;	z = x * x * x;	return z; }
+	int VoC(int) { system("CLS"); std::cout << "You have choosen Volume of Parallelepiped ...." <<std::endl;	std::cout << "Enter x :=: ";std::cin >> x;	z = x * x * x;	return z; }
 
 	int VoP(int, int, int) { system("CLS"); std::cout << "You have choosen Volume of pyramid ...." <<std::endl;	std::cout << "Enter Base length :=: ";	std::cin >> x;	std::cout << "Enter Base width :=: ";	std::cin >> y;	std::cout << "Enter Pyramid height :=: ";	std::cin >> h;	z = (x*y*h)/3;	return z; }
 
-	int VoS(int) { system("CLS"); std::cout << "You have choosen Volume of sphere ...." <<std::endl;	std::cout << "Enter x :=: ";std::cin >> x;	z=(4/3)*M_PI*x*x*x;	return z; }
+	int VoR(int, int, int) { system("CLS"); std::cout << "You have choosen Volume of a Rectangular ...." <<std::endl;	std::cout << "Enter Base length :=: ";	std::cin >> x;	std::cout << "Enter Base width :=: ";	std::cin >> y;	std::cout << "Enter Pyramid height :=: ";	std::cin >> h;	z = (x * y * h);	return z;}
 
-	int VoR(int, int, int) { system("CLS"); std::cout << "You have choosen Volume of rectangle ...." <<std::endl;	std::cout << "Enter Base length :=: ";	std::cin >> x;	std::cout << "Enter Base width :=: ";	std::cin >> y;	std::cout << "Enter Pyramid height :=: ";	std::cin >> h;	z = (x * y * h);	return z;}
-
+	int VoS(float) { system("CLS"); std::cout << "You have choosen Volume of sphere ...." << std::endl;	std::cout << "Enter r :=: ";std::cin >> x;	z = ((4/3)*(x * x * x))* M_PI;	return z; }
 
 };
 VcVpVs Vm;
+
 
 //squared  ,square root  17,18
 class SSr {
@@ -98,9 +98,9 @@ public:
 	int cases(int) {
 	
 		std::cout << "Choose what you need help with  " <<std::endl;
-		std::cout << "1. addition			7. Area of rectangle			13. Volume of cube" <<std::endl;
+		std::cout << "1. addition			7. Area of rectangle			13. Volume of Parallelepiped" <<std::endl;
 		std::cout << "2. subtraction			8. Area of circle			14. Volume of pyramid" <<std::endl;
-		std::cout << "3. multiplying			9. Perimeter of sqare			15. Volume of rectangle" <<std::endl;
+		std::cout << "3. multiplying			9. Perimeter of sqare			15. Volume of a Rectangular" <<std::endl;
 		std::cout << "4. dividing			10. Perimeter of triangle		16. Volume of sphere" <<std::endl;
 		std::cout << "5. Area of sqare		11. Perimeter of circle			17. squared of a number " <<std::endl;
 		std::cout << "6. Area of triangle		12. Perimeter of rectangle		18.square root  of a number " <<std::endl <<std::endl;
@@ -117,7 +117,7 @@ int main()
 
 	switch (men.case_)
 	{
-	case 0:
+	case 0: exit(0);
 	case 1:	m.add(m.x, m.y); std::cout <<std::endl; break;
 	case 2:	m.sub(m.x, m.y); std::cout <<std::endl; break;
 	case 3:	m.mult(m.x, m.y); std::cout <<std::endl; break;
@@ -151,8 +151,9 @@ int main()
 	if (men.case_ > 0 && men.case_ < 5) { std::cout << "z = " << m.z <<std::endl <<std::endl; }
 	else if (men.case_ > 4 && men.case_ < 9) { std::cout << "z = " << Am.z << " cm^2" <<std::endl <<std::endl; }
 	else if (men.case_ > 8 && men.case_ < 13) { std::cout << "z = " << Pm.z << " cm" <<std::endl <<std::endl; }
-	else if (men.case_ > 12 && men.case_ < 16) { std::cout << "z = " << Vm.z << " cm^3" <<std::endl <<std::endl; }
+	else if (men.case_ > 12 && men.case_ < 17) { std::cout << "z = " << Vm.z << " cm^3" <<std::endl <<std::endl; }
 	else if (men.case_ > 16 && men.case_ < 19) { std::cout << "z = " << Sm.z  <<std::endl <<std::endl; }
+
 
 system("pause");
 system("CLS");
